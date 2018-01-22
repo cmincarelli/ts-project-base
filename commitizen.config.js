@@ -1,0 +1,24 @@
+var fs = require('fs');
+const package = require('./package.json');
+const component = package.name;
+
+module.exports = {
+    types: [
+        { value: 'init', name: 'init:     Initital commit' },
+        { value: 'feat', name: 'feat:     A new feature' },
+        { value: 'fix', name: 'fix:      A bug fix' },
+        { value: 'docs', name: 'docs:     Documentation only changes' },
+        { value: 'style', name: 'style:    Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)' },
+        { value: 'refactor', name: 'refactor: A code change that neither fixes a bug nor adds a feature' },
+        { value: 'perf', name: 'perf:     A code change that improves performance' },
+        { value: 'test', name: 'test:     Adding missing tests' },
+        { value: 'build', name: 'build:    Changes that affect the build system or external dependencies' },
+        { value: 'ci', name: 'ci:       Changes to our CI configuration files and scripts' },
+        { value: 'chore', name: 'chore:    Other changes that don\'t modify src or test files' },
+        { value: 'revert', name: 'revert:   Reverts a previous commit' },
+    ],
+    scopes: [component],
+    scopeOverrides: {},
+    allowCustomScopes: false,
+    allowBreakingChanges: ['feat', 'fix']
+};
